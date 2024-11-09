@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+}
+:root {
+  --primary: #8b5cf6;
+  --primary-hover: #6d28d9;
+  --black: #000000;
+  --secondary: #f5f3ff;
+  --background-admin: #ede9fe;
+  --input: #ddd6fe;
+  --negative: #ef4444;
+  --negative-hover: #dc2626;
+}
+.header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--black);
+  letter-spacing: -0.15rem;
+}
+.header button {
+  background-color: var(--primary);
+  border: none;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  color: var(--secondary);
+  letter-spacing: -0.05rem;
+  transition: 0.15s;
+}
+.header button:hover {
+  background-color: var(--primary-hover);
+  transition: 0.15s;
+}
+.table {
+  position: absolute;
+  top: 15rem;
+  left: 25%;
+}
+thead {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-size: 1rem;
+  font-weight: 400;
+  outline: 1px solid var(--primary);
+}
+thead th {
+  padding: 1rem 8rem;
+}
+tbody {
+  background-color: var(--secondary);
+}
+tbody td {
+  outline: 1px solid var(--primary);
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+}
+td button {
+  background: none;
+  border: none;
+  svg {
+    transition: 0.3s;
+  }
+}
+td button:hover {
+  svg {
+    fill: var(--primary-hover);
+    transition: 0.3s;
+  }
+}

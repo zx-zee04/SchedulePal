@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+}
+:root {
+  --primary: #8b5cf6;
+  --primary-hover: #6d28d9;
+  --black: #000000;
+  --secondary: #f5f3ff;
+  --background-admin: #ede9fe;
+  --input: #ddd6fe;
+  --negative: #ef4444;
+  --negative-hover: #dc2626;
+}
+body {
+  background-color: var(--background-admin);
+}
+.header {
+  font-weight: 700;
+  position: absolute;
+  top: 9rem;
+  left: 25%;
+  font-size: 3rem;
+  color: var(--black);
+  letter-spacing: -0.15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 65.5vw;
+}
+nav {
+  font-size: 15px;
+  background-color: var(--secondary);
+  width: 250px;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: fixed;
+}
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  color: var(--primary);
+  letter-spacing: -1px;
+  transition: 0.15s;
+}
+.nav-links a:hover {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  border-radius: 10px;
+  letter-spacing: -1px;
+  transition: 0.15s;
+  svg {
+    fill: var(--secondary);
+  }
+}
+.nav-links a:is(:link, :active, :visited).active {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  border-radius: 10px;
+  letter-spacing: -1px;
+  transition: 0.15s;
+  svg {
+    fill: var(--secondary);
+  }
+}
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  color: var(--negative);
+  letter-spacing: -1px;
+  transition: 0.15s;
+  svg {
+    fill: var(--negative);
+  }
+}
+.logout-button:hover {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--negative);
+  color: var(--secondary);
+  border-radius: 10px;
+  letter-spacing: -1px;
+  transition: 0.15s;
+  svg {
+    fill: var(--secondary);
+  }
+}
+.lower-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lower-nav p {
+  color: var(--primary);
+  font-size: 0.5rem;
+  margin-left: 0.75rem;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  letter-spacing: -0.1rem;
+  text-decoration: none;
+  color: var(--black);
+}
