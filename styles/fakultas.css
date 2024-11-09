@@ -15,6 +15,15 @@
   --negative: #ef4444;
   --negative-hover: #dc2626;
 }
+.content {
+  position: absolute;
+  width: 65.5vw;
+  left: 25%;
+  top: 9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .header h1 {
   font-weight: 700;
   font-size: 3rem;
@@ -35,11 +44,6 @@
   background-color: var(--primary-hover);
   transition: 0.15s;
 }
-.table {
-  position: absolute;
-  top: 15rem;
-  left: 25%;
-}
 thead {
   background-color: var(--primary);
   color: var(--secondary);
@@ -48,7 +52,7 @@ thead {
   outline: 1px solid var(--primary);
 }
 thead th {
-  padding: 1rem 8rem;
+  padding: 1rem 5rem;
 }
 tbody {
   background-color: var(--secondary);
@@ -71,4 +75,51 @@ td button:hover {
     fill: var(--primary-hover);
     transition: 0.3s;
   }
+}
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.pagination {
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 8px;
+  color: var(--black);
+  box-shadow: 0px 0px 20px rgba(139, 92, 246, 20%);
+}
+.pagination p {
+  padding: 0.5rem 1rem;
+}
+.pagination svg {
+  scale: 2;
+}
+.pagination button {
+  padding: 12px 16px;
+  color: var(--black);
+  background-color: var(--secondary);
+  cursor: pointer;
+  border: none;
+}
+.pagination button:not(:nth-last-child(1)) {
+  border-right: 1px solid var(--primary);
+}
+.pagination button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.pagination button:last-child {
+  border-left: 1px solid var(--primary);
+  border-radius: 0 4px 4px 0;
+}
+.pagination button:hover {
+  color: var(--black);
+  background-color: var(--secondary);
+}
+.pagination button.active {
+  color: var(--black);
+  background-color: var(--secondary);
 }
