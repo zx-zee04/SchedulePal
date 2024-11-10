@@ -10,16 +10,16 @@ function logOut()
   exit();
 }
 
-function deleteFakultas($id, $idx, $conn)
+function deleteFakultas($id, $conn)
 {
-  $sql = "DELETE FROM fakultas WHERE id ='$id'";
+  $sql = "DELETE FROM fakultas WHERE id_fakultas ='$id'";
   mysqli_query($conn, $sql);
-  return ["message" => "Fakultas berhasil dihapus"];
+  return;
 }
 
-function editFakultas($id, $nama, $idx, $conn)
+function editFakultas($id, $nama, $conn)
 {
-  $sql = "UPDATE fakultas SET id_fakultas='$id', nama_fakultas='$nama' WHERE id='$idx'";
+  $sql = "UPDATE fakultas SET nama_fakultas='$nama' WHERE id_fakultas='$id'";
   if (isset($id, $nama)) {
     mysqli_query($conn, $sql);
     return ["message" => "Fakultas berhasil diupdate"];
