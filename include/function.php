@@ -42,4 +42,34 @@ function tambahFakultas($id, $nama, $conn)
   }
 }
 
+function login($conn, $username, $password)
+{
+  $sql = "SELECT * FROM users WHERE username='$username'";
+  $result = mysqli_query($conn, $sql);
+  if ($result->num_rows === 0) {
+    return [
+      "status" => false,
+      "message" => "username not found!"
+    ];
+  }
+  $sql = "SELECT * FROM users WHERE username='$username'";
+  $result = mysqli_query($conn, $sql);
+  $user = mysqli_fetch_assoc($result);
+
+  if (!password_verify($password, $user['password'])) {
+    return [
+      "status" => false,
+      "message" => "Password is incorrect!"
+    ];
+  }
+
+  return [
+    "status" => true,
+    "message" => "Successfully logged in!",
+    "NIM" => $user['NIM'],
+    "username" => $user['username'],
+    "fullname" => $user['fullname'],
+    "role" => $user['role'],
+  ];
+}
 ?>

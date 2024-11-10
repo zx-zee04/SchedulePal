@@ -1,6 +1,13 @@
 <?php
 include 'include/connection.php';
 include 'include/function.php';
+
+session_start();
+$user = $_SESSION['user'];
+if (!isset($user)) {
+    header('Location: login.php');
+}
+
 if (isset($_POST['id']) && isset($_POST['nama'])) {
     $id = $_POST['id'];
     $nama = $_POST['nama'];
