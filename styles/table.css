@@ -52,14 +52,14 @@ thead {
   outline: 1px solid var(--primary);
 }
 thead th {
-  padding: 1rem 5rem;
+  padding: 1rem 2rem;
 }
 tbody {
   background-color: var(--secondary);
 }
 tbody td {
   outline: 1px solid var(--primary);
-  padding: 1rem;
+  padding: 0.5rem;
   align-items: center;
   text-align: center;
 }
