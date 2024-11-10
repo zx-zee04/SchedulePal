@@ -28,7 +28,7 @@ if (isset($_POST["register"])) {
         $error = "NIM sudah terdaftar! Silakan periksa kembali NIM Anda.";
     } else {
         // Jika username dan NIM belum digunakan, lanjutkan proses registrasi
-        $query = "INSERT INTO users (username, id_fakultas, nim, password, role) 
+        $query = "INSERT INTO users (username, fakultas, nim, password, role) 
                 VALUES ('$username', '$id_fakultas', '$NIM', '$password', '$role')";
         if (mysqli_query($conn, $query)) {
             echo "

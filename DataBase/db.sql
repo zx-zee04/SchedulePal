@@ -18,9 +18,15 @@ CREATE TABLE schedule (
 );
 
 CREATE TABLE users (
-  NIM int NOT NULL,
+  NIM bigint NOT NULL,
   username varchar(20) NOT NULL,
   fakultas varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
   role enum('user','admin') NOT NULL DEFAULT 'user'
 );
+
+drop table users;
+
+select *from users;
+
+INSERT INTO `users` VALUES (10,'admin','admin','$2y$10$9h3plJhS6R.nBD8d0AiCkuGW9AGaq0kmxT49.ZCC34p3R0oEYUm.y','admin');
