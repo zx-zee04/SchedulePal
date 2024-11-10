@@ -7,11 +7,6 @@ $user = $_SESSION['user'];
 if (!isset($user)) {
     header('Location: login.php');
 }
-session_start();
-$user = $_SESSION['user'];
-if (!isset($user)) {
-    header('Location: login.php');
-}
 
 if (isset($_POST['id']) && isset($_POST['nama'])) {
     $id = $_POST['id'];

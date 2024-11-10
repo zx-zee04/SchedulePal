@@ -1,12 +1,6 @@
 <?php
 include 'connection.php';
 
-session_start();
-$user = $_SESSION['user'];
-if (!isset($user)) {
-  header('Location: login.php');
-}
-
 function logOut()
 {
   session_start();
@@ -55,10 +49,10 @@ function login($conn, $username, $password)
   if ($result->num_rows === 0) {
     return [
       "status" => false,
-      "message" => "username or email not found!"
+      "message" => "username not found!"
     ];
   }
-  $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  $sql = "SELECT * FROM users WHERE username='$username'";
   $result = mysqli_query($conn, $sql);
   $user = mysqli_fetch_assoc($result);
 
@@ -78,5 +72,4 @@ function login($conn, $username, $password)
     "role" => $user['role'],
   ];
 }
-
 ?>
