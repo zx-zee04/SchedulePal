@@ -70,6 +70,11 @@ form input {
   width: 100%;
   transition: 0.15s;
 }
+form input[type="number"]::-webkit-outer-spin-button,
+form input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 form input::placeholder {
   color: var(--black);
 }
