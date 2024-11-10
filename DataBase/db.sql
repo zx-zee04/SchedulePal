@@ -21,6 +21,7 @@ CREATE TABLE users (
   NIM int NOT NULL,
   username varchar(20) NOT NULL,
   fullname varchar(50) NOT NULL,
-  password varchar(20) NOT NULL,
+  fakultas varchar(255) NOT NULL,
+  password varchar(255) NOT NULL,
   role enum('user','admin') NOT NULL DEFAULT 'user'
 );
