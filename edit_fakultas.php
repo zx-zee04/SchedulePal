@@ -8,6 +8,7 @@ if (isset($_POST['value'])) {
     $namaBaru = $_POST['value'];
     $hasil = editFakultas($id, $namaBaru, $conn);
     echo "<script>alert('" . $hasil['message'] . "')</script>";
+    echo "<script>window.location.href='fakultas.php';</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ if (isset($_POST['value'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/input.css">
-    <title>Document</title>
+    <title>Edit Fakultas</title>
 </head>
 
 <body>
@@ -37,5 +38,4 @@ if (isset($_POST['value'])) {
         </form>
     </div>
 </body>
-
 </html>

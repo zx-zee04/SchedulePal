@@ -6,7 +6,7 @@ if (isset($_POST['id']) && isset($_POST['nama'])) {
     $nama = $_POST['nama'];
     $hasil = tambahFakultas($id, $nama, $conn);
     echo "<script>alert('" . $hasil['message'] . "')</script>";
-    // header("Location: fakultas.php");
+    echo "<script>window.location.href='fakultas.php';</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ if (isset($_POST['id']) && isset($_POST['nama'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/input.css">
-    <title>Document</title>
+    <title>Tambah Data Fakultas</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@ if (isset($_POST['id']) && isset($_POST['nama'])) {
         </div>
         <form action="" method="post" class="form-input">
             <input type="number" placeholder="ID Fakultas" name="id">
-            <input type="text" placeholder="Nama Fakultas" name="nama">
+            <input type="text" placeholder="Nama Fakultas" name="nama" required>
             <button>Tambah</button>
         </form>
     </div>

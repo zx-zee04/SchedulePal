@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <form action="">
@@ -13,7 +13,7 @@
         <input type="text" placeholder="Username">
         <input type="password" placeholder="Password">
         <button>Login</button>
-        <p>Belum punya akun?<a href="">Daftar disini</a></p>
+        <p>Belum punya akun?<a href="signup.php">Daftar disini</a></p>
     </form>
 </body>
 </html>
