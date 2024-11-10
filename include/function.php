@@ -70,6 +70,7 @@ function login($conn, $username, $password)
     "username" => $user['username'],
     "fullname" => $user['fullname'],
     "role" => $user['role'],
+    "fakultas" => $user['fakultas'],
   ];
 }
 ?>

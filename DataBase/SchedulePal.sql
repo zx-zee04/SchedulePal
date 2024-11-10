@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `schedulepal` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `schedulepal`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: schedulepal
@@ -37,7 +35,7 @@ CREATE TABLE `fakultas` (
 
 LOCK TABLES `fakultas` WRITE;
 /*!40000 ALTER TABLE `fakultas` DISABLE KEYS */;
-INSERT INTO `fakultas` VALUES (1,'Fakultas Teknik'),(2,'Fakultas Ilmu Komputer'),(3,'Fakultas Ekonomi dan Bisnis'),(4,'Fakultas Hukum'),(5,'Fakultas Kedokteran'),(6,'Fakultas Psikologi'),(7,'Fakultas Ilmu Sosial dan Politik'),(8,'Fakultas Seni Rupa dan Desain'),(9,'Fakultas Matematika dan Ilmu Pengetahuan Alam'),(10,'Fakultas Pertanian');
+INSERT INTO `fakultas` VALUES (4,'Informatika'),(5,'Fakultas Kedokteran'),(6,'Fakultas Psikologi'),(7,'Fakultas Ilmu Sosial dan Politik'),(8,'Fakultas Seni Rupa dan Desain'),(9,'Fakultas Matematika dan Ilmu Pengetahuan Alam'),(10,'Fakultas Pertanian');
 /*!40000 ALTER TABLE `fakultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,8 +78,9 @@ CREATE TABLE `users` (
   `NIM` int NOT NULL,
   `username` varchar(20) NOT NULL,
   `fullname` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `role` enum('user','admin') NOT NULL DEFAULT 'user',
+  `fakultas` varchar(255) NOT NULL,
   PRIMARY KEY (`NIM`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -92,6 +91,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (10,'admin','admin','$2y$10$9h3plJhS6R.nBD8d0AiCkuGW9AGaq0kmxT49.ZCC34p3R0oEYUm.y','admin','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-09 22:58:41
+-- Dump completed on 2024-11-10 22:42:47
