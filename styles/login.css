@@ -60,6 +60,9 @@ form button {
   color: var(--secondary);
   width: 100%;
 }
+form button:hover {
+  background-color: var(--primary-hover);
+}
 form p {
   font-size: 1rem;
   a {
