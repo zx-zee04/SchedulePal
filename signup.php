@@ -17,8 +17,8 @@
             </option>
             <option>Teknik</option>
         </select>
-        <input type="number" name="" id="" placeholder="NIM">
-        <input type="password" placeholder="Password">
+        <input type="number" name="" id="" placeholder="NIM" required>
+        <input type="password" placeholder="Password" required>
         <button>Daftar</button>
         <p>Sudah punya akun?<a href="login.php">Masuk disini</a></p>
     </form>
