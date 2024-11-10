@@ -1,5 +1,5 @@
 <?php
-require "connection.php";
+require "include/connection.php";
 
 // Variabel untuk menyimpan pesan error
 $error = "";
