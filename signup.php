@@ -1,12 +1,15 @@
 <?php
 require "connection.php";
-
 // Variabel untuk menyimpan pesan error
 $error = "";
 
+// Query untuk mengambil data fakultas
+$queryFakultas = "SELECT * FROM fakultas";
+$resultFakultas = mysqli_query($conn, $queryFakultas);
+
 if (isset($_POST["register"])) {
     $username = mysqli_real_escape_string($conn, $_POST["username"]);
-    $fakultas = mysqli_real_escape_string($conn, $_POST["fakultas"]);
+    $id_fakultas = mysqli_real_escape_string($conn, $_POST["fakultas"]);
     $NIM = mysqli_real_escape_string($conn, $_POST["NIM"]);
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $role = "user";
@@ -14,20 +17,19 @@ if (isset($_POST["register"])) {
     // Cek apakah username sudah digunakan
     $checkUsername = "SELECT * FROM users WHERE username = '$username'";
     $checkUsernameResult = mysqli_query($conn, $checkUsername);
-
+    
     // Cek apakah NIM sudah digunakan
     $checkNim = "SELECT * FROM users WHERE NIM = '$NIM'";
     $checkNimResult = mysqli_query($conn, $checkNim);
-
+    
     if (mysqli_num_rows($checkUsernameResult) > 0) {
         $error = "Username sudah digunakan! Silakan gunakan username lain.";
     } elseif (mysqli_num_rows($checkNimResult) > 0) {
         $error = "NIM sudah terdaftar! Silakan periksa kembali NIM Anda.";
     } else {
         // Jika username dan NIM belum digunakan, lanjutkan proses registrasi
-        $query = "INSERT INTO users (username, fakultas, nim, password, role) 
-                VALUES ('$username', '$fakultas', '$nim', '$password', '$role')";
-
+        $query = "INSERT INTO users (username, id_fakultas, nim, password, role) 
+                VALUES ('$username', '$id_fakultas', '$NIM', '$password', '$role')";
         if (mysqli_query($conn, $query)) {
             echo "
             <script>
@@ -44,7 +46,6 @@ if (isset($_POST["register"])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,15 +64,16 @@ if (isset($_POST["register"])) {
         <?php if (!empty($error)) { ?>
             <div class="error-message"><?php echo $error; ?></div>
         <?php } ?>
-
         <input type="text" name="username" placeholder="Username" required>
         
         <select name="fakultas" class="option-fakultas" required>
             <option value="" selected disabled>Fakultas</option>
-            <option value="Teknik">Teknik</option>
+            <?php while($row = mysqli_fetch_assoc($resultFakultas)) { ?>
+                <option value="<?php echo $row['id_fakultas']; ?>"><?php echo $row['nama_fakultas']; ?></option>
+            <?php } ?>
         </select>
         
-        <input type="number" name="nim" placeholder="NIM" required>
+        <input type="number" name="NIM" placeholder="NIM" required>
         
         <input type="password" name="password" placeholder="Password" required>
         
