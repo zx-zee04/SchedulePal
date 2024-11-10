@@ -68,7 +68,6 @@ function login($conn, $username, $password)
     "message" => "Successfully logged in!",
     "NIM" => $user['NIM'],
     "username" => $user['username'],
-    "fullname" => $user['fullname'],
     "role" => $user['role'],
     "fakultas" => $user['fakultas'],
   ];
