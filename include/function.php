@@ -72,4 +72,12 @@ function login($conn, $username, $password)
     "fakultas" => $user['fakultas'],
   ];
 }
+
+function hitungJumlahFakultas($conn)
+{
+  $sql = "SELECT COUNT(*) AS jumlah FROM fakultas";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+  return $row['jumlah'];
+}
 ?>
