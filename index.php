@@ -1,4 +1,7 @@
 <?php
+include 'include/connection.php';
+include 'include/function.php';
+
 session_start();
 $user = $_SESSION['user'];
 if (!isset($user)) {
@@ -33,7 +36,7 @@ if (!isset($user)) {
                 </svg>
                 <div>
                     <h2>Jumlah<br>Fakultas</h2>
-                    <p>0</p>
+                    <p><?= hitungJumlahFakultas($conn) ?></p>
                 </div>
             </div>
             <div class="card">
