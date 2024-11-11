@@ -1,15 +1,6 @@
 <?php
 include 'connection.php';
 
-function logOut()
-{
-  session_start();
-  session_unset();
-  session_destroy();
-  header("Location: login.php");
-  exit();
-}
-
 function deleteFakultas($id, $conn)
 {
   $sql = "DELETE FROM fakultas WHERE id_fakultas ='$id'";
