@@ -45,7 +45,7 @@ body {
   padding: 1rem 1.5rem;
   border-radius: 10px;
   color: var(--secondary);
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.005rem;
   transition: 0.15s;
 }
 .header button:hover {
