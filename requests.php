@@ -70,7 +70,7 @@ $perpage = 5;
             </tbody>
         </table>
         <div class="bottom-container">
-            <p>Showing <?= $offset + 1 ?>-<?= min($offset + $perPage, $totalItems) ?> of <?= $totalItems ?></p>
+            <p>Showing <?= $offset + 1 ?>-<?= min($offset + $perpage, $totalitems) ?> of <?= $totalitems ?></p>
             <div class="pagination">
                 <?php if ($page > 1): ?>
                     <a href="?page=<?= $page - 1 ?>">
@@ -94,8 +94,8 @@ $perpage = 5;
                     </a>
                 <?php endif; ?>
 
-                <div>Page <?= $page ?> of <?= $totalPages ?></div>
-                <?php if ($page < $totalPages): ?>
+                <div>Page <?= $page ?> of <?= $totalpages ?></div>
+                <?php if ($page < $totalpages): ?>
                     <a href="?page=<?= $page + 1 ?>">
                         <button type="button">
                             <svg
