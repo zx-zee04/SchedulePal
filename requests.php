@@ -1,3 +1,23 @@
+<?php 
+include 'include/connection.php';
+
+$perpage = 5;
+
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $offset = ($page - 1) * $perpage;
+
+    $query = "SELECT users.NIM, fakultas.nama_fakultas, schedule.judul_acara, schedule.deskripsi, schedule.lokasi, schedule.waktu, schedule.tanggal 
+              FROM schedule 
+              JOIN users ON schedule.NIM = users.NIM 
+              JOIN fakultas ON users.id_fakultas = fakultas.id_fakultas 
+              LIMIT $perpage OFFSET $offset";
+    $result = $conn->query($query);
+
+    $totalitemsquery = $conn->query("SELECT COUNT(*) as total FROM schedule");
+    $totalitems = $totalitemsquery->fetch_assoc()['total'];
+    $totalpages = ceil($totalitems / $perpage); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,25 +29,7 @@
 <body>
     <?php
     require 'templates/sidebar.php';
-    include 'include/connection.php';
-
-    $perpage = 5;
-
-        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-        $offset = ($page - 1) * $perpage;
-
-        $query = "SELECT users.NIM, fakultas.nama_fakultas, schedule.judul_acara, schedule.deskripsi, schedule.lokasi, schedule.waktu, schedule.tanggal 
-                  FROM schedule 
-                  JOIN users ON schedule.NIM = users.NIM 
-                  JOIN fakultas ON users.id_fakultas = fakultas.id_fakultas 
-                  LIMIT $perpage OFFSET $offset";
-        $result = $conn->query($query);
-
-        $totalitemsquery = $conn->query("SELECT COUNT(*) as total FROM schedule");
-        $totalitems = $totalitemsquery->fetch_assoc()['total'];
-        $totalpages = ceil($totalitems / $perpage);
     ?>
-
     <div class="content">
         <div class="header">
             <h1>Requests</h1>
